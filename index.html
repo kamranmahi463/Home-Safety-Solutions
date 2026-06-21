@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Home Safety Solutions | Premium Engineering Muscat</title>
+    <title>Home Safety Solutions | Live Work Feed & Aging Tracker</title>
     
-    <!-- FB SDK (Required for Automatic Feed) -->
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0"></script>
-
+    <!-- Meta for Google Search Growth -->
+    <meta name="description" content="Expert CCTV, WiFi, Electrical and Plumbing in Muscat, Oman. 10+ Years Experience. Established 2016.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -17,39 +15,39 @@
         * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
         body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: #334155; line-height: 1.6; }
         
-        /* Header */
         header { background: var(--primary); color: white; padding: 10px 5%; position: sticky; top: 0; z-index: 1000; border-bottom: 3px solid var(--accent); display: flex; justify-content: space-between; align-items: center; }
-        .logo-box { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--accent); }
-        .logo-img { width: 45px; height: 45px; border-radius: 5px; object-fit: cover; border: 1px solid var(--accent); }
+        .logo-box { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--accent); font-weight: bold; }
+        .logo-img { width: 45px; height: 45px; border-radius: 5px; border: 1px solid var(--accent); }
 
-        /* Sidebar */
         .sidebar { position: fixed; top: 0; right: -320px; width: 300px; height: 100%; background: var(--primary); z-index: 2000; padding: 60px 25px; transition: 0.3s ease; }
         .sidebar.active { right: 0; }
         .sidebar a { display: block; color: white; text-decoration: none; padding: 15px 0; border-bottom: 1px solid var(--secondary); font-size: 1.1rem; }
         
-        /* Hero */
         .hero { background: linear-gradient(rgba(11,19,43,0.9), rgba(11,19,43,0.9)), url('https://images.unsplash.com/photo-1558002038-1055907df827?w=1200') center/cover; color: white; padding: 60px 5%; text-align: center; border-radius: 0 0 30px 30px; }
-        .hero-logo { width: 120px; height: 120px; border-radius: 15px; border: 3px solid var(--accent); margin-bottom: 20px; }
+        .hero h1 { font-size: 2rem; margin-bottom: 10px; }
+        .hero-logo { width: 100px; height: 100px; border-radius: 10px; border: 2px solid var(--accent); margin-bottom: 15px; }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 30px 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); text-align: center; margin-bottom: 20px; }
-        
-        /* FB Feed Styling */
-        .fb-container { background: white; padding: 20px; border-radius: 15px; text-align: center; margin-bottom: 40px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: white; padding: 20px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); margin-bottom: 20px; }
 
-        /* Aging Tracker */
+        /* Video Feed */
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; background: #000; margin-top: 10px; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+
+        /* Aging Tracker Tool */
         .aging-tool { background: var(--primary); color: white; padding: 25px; border-radius: 15px; margin-top: 20px; }
-        .aging-tool input { width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: none; }
-        .btn-aging { background: var(--accent); color: var(--primary); font-weight: 700; width: 100%; padding: 15px; border: none; border-radius: 8px; cursor: pointer; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; color: white; font-size: 0.8rem; }
+        .aging-tool input { width: 100%; padding: 12px; margin: 8px 0; border-radius: 8px; border: none; font-size: 1rem; }
+        .btn-aging { background: var(--accent); color: var(--primary); font-weight: 700; width: 100%; padding: 15px; border: none; border-radius: 8px; cursor: pointer; text-transform: uppercase; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.85rem; }
         th { text-align: left; border-bottom: 2px solid var(--accent); padding: 10px; }
         td { padding: 10px; border-bottom: 1px solid var(--secondary); }
+        .overdue { color: #ff4d4d; font-weight: bold; }
+        .current { color: #00ff00; font-weight: bold; }
 
-        /* Floating WhatsApp */
         .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; z-index: 2000; box-shadow: 0 10px 20px rgba(0,0,0,0.3); text-decoration: none; }
 
-        footer { background: var(--primary); color: white; padding: 50px 5%; text-align: center; border-top: 5px solid var(--accent); }
+        footer { background: var(--primary); color: white; padding: 40px 5%; text-align: center; border-top: 5px solid var(--accent); }
         .view { display: none; } .view.active { display: block; animation: fadeIn 0.4s ease; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
@@ -75,74 +73,55 @@
     <a href="https://wa.me/96872396139" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
     <main class="container">
-        <!-- HOME SECTION -->
+        <!-- HOME PAGE -->
         <section id="home" class="view active">
             <div class="hero">
                 <img src="logo.jpg" alt="Logo" class="hero-logo" onerror="this.style.display='none'">
-                <h1>Engineering & Security</h1>
-                <p>#1 Choice for CCTV & Smart Home in Al Amarat</p>
-                <div style="background:var(--accent); color:var(--primary); padding:6px 18px; border-radius:20px; font-weight:700; margin-top:15px; display:inline-block;">10 YEARS EXPERIENCE</div>
+                <h1>Automatic Project Feed</h1>
+                <p>Latest CCTV & Engineering work from Muscat</p>
+                <div style="background:var(--accent); color:var(--primary); padding:6px 18px; border-radius:20px; font-weight:700; margin-top:15px; display:inline-block;">WATCH OUR LATEST VIDEOS</div>
             </div>
             
-            <!-- INSTANT VIDEO (Manually added for best quality) -->
-            <div class="card" style="margin-top:30px;">
-                <h3>Featured Work Video</h3>
-                <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:12px; margin-top:15px; background:#000;">
-                    <!-- Replace the VIDEO_URL below with your specific FB video link or YouTube link -->
-                    <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/Safety.om/videos/1191090152438887/" 
-                    style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;" scrolling="no" frameborder="0" allowfullscreen="true"></iframe>
-                </div>
-            </div>
-
-            <div class="grid" style="margin-top:40px;">
-                <div class="card"><i class="fas fa-video"></i><h3>CCTV</h3><p>Install & Unbind.</p></div>
-                <div class="card"><i class="fas fa-wifi"></i><h3>WiFi</h3><p>Router Tuning.</p></div>
+            <h3 style="margin: 30px 0 15px; color: var(--primary);">Newest YouTube Uploads</h3>
+            <div class="grid" id="youtube-feed">
+                <!-- YouTube videos will appear here automatically -->
+                <p>Syncing with YouTube Channel...</p>
             </div>
         </section>
 
-        <!-- AUTOMATIC FEED SECTION -->
-        <section id="feed" class="view">
-            <h2 style="text-align:center; margin-bottom:20px; color:var(--primary);">Facebook Automatic Feed</h2>
-            <p style="text-align:center; margin-bottom:20px;">All your latest FB posts and videos show here automatically.</p>
-            
-            <div class="fb-container">
-                <div class="fb-page" 
-                    data-href="https://www.facebook.com/Safety.om" 
-                    data-tabs="timeline,events,messages" 
-                    data-width="500" 
-                    data-height="800" 
-                    data-small-header="false" 
-                    data-adapt-container-width="true" 
-                    data-hide-cover="false" 
-                    data-show-facepile="true">
-                    <blockquote cite="https://www.facebook.com/Safety.om" class="fb-xfbml-parse-ignore">
-                        <a href="https://www.facebook.com/Safety.om">Home Safety Solutions</a>
-                    </blockquote>
-                </div>
-            </div>
-        </section>
-
-        <!-- AGING TRACKER SECTION -->
+        <!-- AGING TRACKER PAGE -->
         <section id="aging" class="view">
-            <h2 style="text-align:center; margin-bottom:20px; color:var(--primary);">Aging Tracker</h2>
+            <h2 style="text-align:center; color:var(--primary);">Aging Tracker (Private)</h2>
             <div class="aging-tool">
-                <input type="text" id="cust-name" placeholder="Name">
-                <input type="number" id="cust-amt" placeholder="Amount (OMR)">
-                <input type="date" id="cust-date">
-                <button class="btn-aging" onclick="calculateAging()">Save Record</button>
+                <input type="text" id="c-name" placeholder="Customer Name">
+                <input type="number" id="c-amt" placeholder="Amount (OMR)">
+                <input type="date" id="c-date">
+                <button class="btn-aging" onclick="addRecord()">Add to Tracker</button>
+                
                 <div style="overflow-x:auto;">
                     <table>
-                        <thead><tr><th>Name</th><th>Amount</th><th>Status</th></tr></thead>
+                        <thead>
+                            <tr><th>Customer</th><th>Amount</th><th>Status</th><th>Action</th></tr>
+                        </thead>
                         <tbody id="aging-table"></tbody>
                     </table>
                 </div>
             </div>
         </section>
 
-        <!-- CONTACT SECTION -->
+        <!-- FEED PAGE (YouTube + Facebook) -->
+        <section id="feed" class="view">
+            <h2 style="text-align:center; margin-bottom:20px;">Full Work Feed</h2>
+            <div class="card">
+                <h3>Our YouTube Channel</h3>
+                <div id="vault-feed" class="grid"></div>
+            </div>
+        </section>
+
+        <!-- CONTACT PAGE -->
         <section id="contact" class="view">
-            <div class="card" style="max-width:500px; margin:0 auto; text-align: left;">
-                <h2>Contact Info</h2>
+            <div class="card" style="max-width:500px; margin:0 auto;">
+                <h2>Get in Touch</h2>
                 <p>📍 Al Amarat, Muscat, Oman</p>
                 <p>📞 +968 72396139</p>
                 <p>✉️ homemantinace.om@gmail.com</p>
@@ -152,11 +131,89 @@
 
     <footer>
         <p><strong>HOME SAFETY SOLUTIONS</strong></p>
-        <p>Copyright &copy; 2016-2026 | Muscat, Oman</p>
-        <p style="opacity:0.5; font-size:0.7rem; margin-top:20px;">Created by Kamran Khan</p>
+        <p>Muscat, Oman | Since 2016</p>
+        <p style="opacity:0.5; font-size:0.7rem; margin-top:20px;">&copy; 2016-2026 | Created by Kamran Khan</p>
     </footer>
 
     <script>
+        // --- 1. AUTOMATIC YOUTUBE FEED LOGIC ---
+        const CHANNEL_ID = 'UCbwVSQGAe6mTFqPfZjSidTg';
+        
+        async function fetchYouTube() {
+            try {
+                // We use a free proxy to fetch the YouTube RSS feed without an API Key
+                const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
+                const apiProxy = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+                
+                const response = await fetch(apiProxy);
+                const data = await response.json();
+                
+                const feedContainer = document.getElementById('youtube-feed');
+                const vaultContainer = document.getElementById('vault-feed');
+                feedContainer.innerHTML = '';
+                
+                data.items.slice(0, 3).forEach(item => {
+                    const videoId = item.link.split('v=')[1];
+                    const cardHtml = `
+                        <div class="card">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/${videoId}" allowfullscreen></iframe>
+                            </div>
+                            <h4 style="margin-top:10px;">${item.title}</h4>
+                        </div>
+                    `;
+                    feedContainer.innerHTML += cardHtml;
+                    if(vaultContainer) vaultContainer.innerHTML += cardHtml;
+                });
+            } catch (e) {
+                console.error("YouTube Feed Error");
+            }
+        }
+
+        // --- 2. AGING TRACKER LOGIC (WITH SAVE FEATURE) ---
+        let records = JSON.parse(localStorage.getItem('hss_records')) || [];
+
+        function renderTable() {
+            const table = document.getElementById('aging-table');
+            table.innerHTML = '';
+            const today = new Date();
+
+            records.forEach((res, index) => {
+                const dueDate = new Date(res.date);
+                const diff = Math.floor((today - dueDate) / (1000 * 60 * 60 * 24));
+                const status = diff > 0 ? `<span class="overdue">${diff} Days Overdue</span>` : `<span class="current">Current</span>`;
+                
+                table.innerHTML += `
+                    <tr>
+                        <td>${res.name}</td>
+                        <td>${res.amount} OMR</td>
+                        <td>${status}</td>
+                        <td><button onclick="deleteRecord(${index})" style="background:none; border:none; color:white; cursor:pointer;">❌</button></td>
+                    </tr>
+                `;
+            });
+        }
+
+        function addRecord() {
+            const name = document.getElementById('c-name').value;
+            const amount = document.getElementById('c-amt').value;
+            const date = document.getElementById('c-date').value;
+            if(!name || !amount || !date) return alert("Please fill all fields");
+
+            records.push({ name, amount, date });
+            localStorage.setItem('hss_records', JSON.stringify(records));
+            renderTable();
+            document.getElementById('c-name').value = '';
+            document.getElementById('c-amt').value = '';
+        }
+
+        function deleteRecord(index) {
+            records.splice(index, 1);
+            localStorage.setItem('hss_records', JSON.stringify(records));
+            renderTable();
+        }
+
+        // --- 3. UI FUNCTIONS ---
         function toggleMenu() { document.getElementById('sidebar').classList.toggle('active'); }
         function showView(id) {
             document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
@@ -164,17 +221,11 @@
             if(document.getElementById('sidebar').classList.contains('active')) toggleMenu();
             window.scrollTo(0,0);
         }
-        function calculateAging() {
-            const n = document.getElementById('cust-name').value;
-            const a = document.getElementById('cust-amt').value;
-            const d = document.getElementById('cust-date').value;
-            if(!n || !a || !d) return alert("Fill all fields");
-            const today = new Date();
-            const dueDate = new Date(d);
-            const diff = Math.floor((today - dueDate) / (1000 * 60 * 60 * 24));
-            const status = diff > 0 ? `<span style="color:var(--danger)">${diff} Days Overdue</span>` : `<span style="color:var(--success)">Current</span>`;
-            document.getElementById('aging-table').innerHTML += `<tr><td>${n}</td><td>${a} OMR</td><td>${status}</td></tr>`;
-        }
+
+        window.onload = () => {
+            fetchYouTube();
+            renderTable();
+        };
     </script>
 </body>
-            </html>
+    </html>
