@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Home Safety Solutions | #1 Engineering Muscat Oman</title>
-    <meta name="description" content="Professional CCTV, WiFi, Electrical and Plumbing solutions in Muscat, Oman. 10+ years experience. Established 2016.">
+    <meta name="description" content="Expert CCTV, WiFi, Electrical and Plumbing solutions in Al Amarat, Muscat. 10+ years experience. Quality maintenance since 2016.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -12,76 +12,86 @@
         * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
         body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: #334155; line-height: 1.6; }
         header { background: var(--primary); color: white; padding: 15px 5%; position: sticky; top: 0; z-index: 1000; border-bottom: 3px solid var(--accent); display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.3rem; font-weight: 700; color: var(--accent); text-decoration: none; }
-        .sidebar { position: fixed; top: 0; right: -320px; width: 300px; height: 100%; background: var(--primary); z-index: 2000; padding: 60px 25px; transition: 0.3s ease; }
+        .logo-area { color: var(--accent); font-weight: 700; text-decoration: none; font-size: 1.2rem; display: flex; align-items: center; gap: 8px; }
+        .sidebar { position: fixed; top: 0; right: -320px; width: 300px; height: 100%; background: var(--primary); z-index: 2000; padding: 60px 25px; transition: 0.3s ease; box-shadow: -5px 0 15px rgba(0,0,0,0.3); }
         .sidebar.active { right: 0; }
         .sidebar a { display: block; color: white; text-decoration: none; padding: 15px 0; border-bottom: 1px solid var(--secondary); font-size: 1.1rem; }
         .hero { background: linear-gradient(rgba(11,19,43,0.9), rgba(11,19,43,0.9)), url('https://images.unsplash.com/photo-1558002038-1055907df827?w=1200') center/cover; color: white; padding: 80px 5%; text-align: center; border-radius: 0 0 30px 30px; }
         .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
         .card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); transition: 0.3s; border-bottom: 4px solid transparent; text-align: center; }
         .card:hover { transform: translateY(-10px); border-bottom-color: var(--accent); }
         .card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 20px; display: block; }
         .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; z-index: 2000; box-shadow: 0 10px 20px rgba(0,0,0,0.2); text-decoration: none; }
-        footer { background: var(--primary); color: white; padding: 40px 5%; text-align: center; border-top: 5px solid var(--accent); margin-top: 50px; }
-        .view { display: none; min-height: 60vh; } .view.active { display: block; }
-        .btn-wa { background: #25d366; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; margin-top: 15px; }
+        .form-box { background: var(--primary); color: white; padding: 30px; border-radius: 15px; margin-top: 30px; }
+        input, select, textarea { width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: none; }
+        .btn-submit { background: var(--accent); color: var(--primary); width: 100%; padding: 15px; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; }
+        footer { background: var(--primary); color: white; padding: 40px 5%; text-align: center; border-top: 5px solid var(--accent); }
+        .view { display: none; } .view.active { display: block; }
     </style>
 </head>
 <body>
     <header>
-        <a href="#" class="logo" onclick="showView('home')">HOME SAFETY SOLUTIONS</a>
+        <a href="#" class="logo-area" onclick="showView('home')"><i class="fas fa-shield-halved"></i> HOME SAFETY</a>
         <div style="cursor:pointer; font-size:1.5rem;" onclick="toggleMenu()"><i class="fas fa-bars-staggered"></i></div>
     </header>
     <nav class="sidebar" id="sidebar">
         <div style="position:absolute; top:20px; left:20px; color:var(--accent); cursor:pointer;" onclick="toggleMenu()"><i class="fas fa-times"></i></div>
-        <a href="#home" onclick="showView('home')"><i class="fas fa-house"></i> Home</a>
-        <a href="#services" onclick="showView('services')"><i class="fas fa-tools"></i> Service List</a>
-        <a href="#contact" onclick="showView('contact')"><i class="fas fa-envelope"></i> Contact Us</a>
-        <a href="#privacy" onclick="showView('privacy')"><i class="fas fa-user-shield"></i> Privacy Policy</a>
+        <a href="#home" onclick="showView('home')">Home</a>
+        <a href="#services" onclick="showView('services')">Services</a>
+        <a href="#booking" onclick="showView('booking')">Book Now</a>
+        <a href="#contact" onclick="showView('contact')">Contact</a>
+        <div style="display:flex; gap:20px; margin-top:30px; font-size:1.5rem; padding-left:15px;">
+            <a href="https://www.facebook.com/Safety.om" target="_blank" style="color:var(--accent)"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/safetyom/" target="_blank" style="color:var(--accent)"><i class="fab fa-instagram"></i></a>
+        </div>
     </nav>
     <a href="https://wa.me/96872396139" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
     <main class="container">
-        <!-- HOME VIEW -->
         <section id="home" class="view active">
             <div class="hero">
-                <h1>Engineering Excellence Since 2016</h1>
-                <p>Muscat's Trusted Choice for CCTV, WiFi, and Home Engineering</p>
-                <div style="background:var(--accent); color:var(--primary); display:inline-block; padding:8px 20px; border-radius:20px; font-weight:bold; margin-top:15px;">10 YEARS EXPERIENCE</div>
+                <h1>Engineering Excellence Muscat</h1>
+                <p>CCTV, WiFi & Home Solutions in Al Amarat since 2016</p>
+                <div style="background:var(--accent); color:var(--primary); padding:5px 15px; border-radius:20px; font-weight:bold; display:inline-block; margin-top:15px;">10 YEARS EXPERIENCE</div>
             </div>
-            <div class="services-grid" style="margin-top:40px;">
-                <div class="card"><i class="fas fa-video"></i><h3>CCTV Solutions</h3><p>Camera installation & unbinding.</p><a href="https://wa.me/96872396139" class="btn-wa">WhatsApp Inquiry</a></div>
-                <div class="card"><i class="fas fa-bolt"></i><h3>Electrical Work</h3><p>Professional wiring & fault finding.</p><a href="https://wa.me/96872396139" class="btn-wa">WhatsApp Inquiry</a></div>
-                <div class="card"><i class="fas fa-wifi"></i><h3>Wi-Fi Tuning</h3><p>Eliminate dead zones with high speed.</p><a href="https://wa.me/96872396139" class="btn-wa">WhatsApp Inquiry</a></div>
+            <div class="grid" style="margin-top:40px;">
+                <div class="card"><i class="fas fa-video"></i><h3>CCTV</h3><p>Install & Unbind.</p></div>
+                <div class="card"><i class="fas fa-bolt"></i><h3>Electric</h3><p>Wiring & Faults.</p></div>
+                <div class="card"><i class="fas fa-wifi"></i><h3>WiFi</h3><p>Range & Speed.</p></div>
             </div>
         </section>
-        <!-- SERVICES VIEW -->
         <section id="services" class="view">
-            <h2 style="text-align:center; margin-bottom:30px;">Complete Service Portfolio</h2>
-            <div class="services-grid">
-                <div class="card"><h3>Intercom Systems</h3><p>Secure building access control.</p></div>
-                <div class="card"><h3>Plumbing Care</h3><p>Leak detection & maintenance.</p></div>
-                <div class="card"><h3>Smart Locks</h3><p>Biometric fingerprint locks.</p></div>
+            <h2 style="text-align:center; margin-bottom:25px;">Our Full Service List</h2>
+            <div class="grid">
+                <div class="card"><h3>Intercom</h3><p>Gate Systems.</p></div>
+                <div class="card"><h3>Plumbing</h3><p>Leaks & Pumps.</p></div>
+                <div class="card"><h3>Smart Locks</h3><p>Fingerprint.</p></div>
             </div>
         </section>
-        <!-- CONTACT VIEW -->
+        <section id="booking" class="view">
+            <div class="form-box">
+                <h2>Book Appointment</h2>
+                <input type="text" id="name" placeholder="Your Name">
+                <select id="service"><option>CCTV</option><option>WiFi</option><option>Electric</option></select>
+                <button class="btn-submit" onclick="sendWA()">Send to WhatsApp</button>
+            </div>
+        </section>
         <section id="contact" class="view">
-            <div class="card" style="max-width:600px; margin:0 auto; text-align: left;">
-                <h2>Contact Information</h2>
-                <p><strong>📍 Location:</strong> Al Amarat, Muscat, Oman 119</p>
-                <p><strong>📞 Phone:</strong> +968 72396139</p>
-                <p><strong>✉️ Email:</strong> homemantinace.om@gmail.com</p>
+            <div class="card">
+                <h2>Contact Us</h2>
+                <p>📍 Al Amarat, Muscat, Oman</p>
+                <p>📞 +968 72396139</p>
+                <p>✉️ homemantinace.om@gmail.com</p>
             </div>
-        </section>
-        <!-- PRIVACY VIEW -->
-        <section id="privacy" class="view">
-            <h2>Privacy Policy</h2>
-            <p>We respect your privacy. Data is used only for service provision.</p>
         </section>
     </main>
     <footer>
+        <div style="margin-bottom:20px; font-size:1.5rem; display:flex; justify-content:center; gap:25px;">
+            <a href="https://www.facebook.com/Safety.om" style="color:var(--accent)"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/safetyom/" style="color:var(--accent)"><i class="fab fa-instagram"></i></a>
+        </div>
         <p>&copy; 2016-2026 Home Safety Solutions | Muscat, Oman</p>
-        <p style="opacity:0.6; font-size:0.8rem;">Created by Kamran Khan</p>
+        <p style="opacity:0.5; font-size:0.7rem;">Created by Kamran Khan</p>
     </footer>
     <script>
         function toggleMenu() { document.getElementById('sidebar').classList.toggle('active'); }
@@ -91,6 +101,11 @@
             if(document.getElementById('sidebar').classList.contains('active')) toggleMenu();
             window.scrollTo(0,0);
         }
+        function sendWA() {
+            const n = document.getElementById('name').value;
+            const s = document.getElementById('service').value;
+            window.open(`https://wa.me/96872396139?text=Booking: ${n} for ${s}`);
+        }
     </script>
 </body>
-  </html>
+    </html>
