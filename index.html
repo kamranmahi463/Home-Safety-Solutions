@@ -2,244 +2,172 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>Home Safety Solutions | Muscat Premium Engineering</title>
-    
-    <!-- SEO Settings -->
-    <meta name="description" content="Expert CCTV, WiFi, Electrical and Plumbing in Muscat, Oman. 10+ Years Experience.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Safety Solutions - Muscat</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <style>
-        :root { --primary: #0b132b; --secondary: #1c2541; --accent: #f59e0b; --white: #ffffff; --bg: #f1f5f9; --success: #22c55e; --danger: #ef4444; }
-        * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: #334155; line-height: 1.5; }
-        
-        /* Navigation */
-        header { background: var(--primary); color: white; padding: 12px 5%; position: sticky; top: 0; z-index: 1000; border-bottom: 3px solid var(--accent); display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .logo-box { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--accent); font-weight: bold; font-size: 1.2rem; }
-        .logo-img { width: 40px; height: 40px; border-radius: 5px; border: 1px solid var(--accent); }
-
-        /* Sidebar Menu */
-        .sidebar { position: fixed; top: 0; right: -320px; width: 280px; height: 100%; background: var(--primary); z-index: 2000; padding: 60px 20px; transition: 0.3s ease; box-shadow: -5px 0 20px rgba(0,0,0,0.5); }
-        .sidebar.active { right: 0; }
-        .sidebar a { display: block; color: white; text-decoration: none; padding: 15px 10px; border-bottom: 1px solid var(--secondary); font-size: 1.1rem; transition: 0.2s; }
-        .sidebar a:hover { color: var(--accent); background: var(--secondary); }
-
-        /* Hero - Android Auto Adjust */
-        .hero { background: linear-gradient(rgba(11,19,43,0.9), rgba(11,19,43,0.9)), url('https://images.unsplash.com/photo-1558002038-1055907df827?w=1200') center/cover; color: white; padding: 50px 5%; text-align: center; border-radius: 0 0 30px 30px; margin-bottom: 20px; }
-        .hero h1 { font-size: calc(1.5rem + 1vw); margin-bottom: 10px; }
-        .hero-logo { width: 100px; height: 100px; border-radius: 12px; border: 2px solid var(--accent); margin-bottom: 15px; }
-
-        /* Containers & Grids */
-        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
-        
-        /* Video Cards - BIG SIZE AUTO ADJUST */
-        .card { background: white; padding: 15px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); border: 1px solid #eee; height: 100%; }
-        .video-box { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; background: #000; }
-        .video-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-        .video-title { margin-top: 12px; font-weight: 700; color: var(--primary); font-size: 1rem; }
-
-        /* Aging Tracker - Private & Persistent */
-        .aging-box { background: var(--primary); color: white; padding: 25px; border-radius: 20px; margin-top: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
-        .aging-box input { width: 100%; padding: 14px; margin: 8px 0; border-radius: 10px; border: none; font-size: 1rem; }
-        .btn-add { background: var(--accent); color: var(--primary); font-weight: 800; width: 100%; padding: 16px; border: none; border-radius: 10px; cursor: pointer; text-transform: uppercase; margin-top: 10px; }
-        
-        .table-wrapper { overflow-x: auto; margin-top: 20px; }
-        table { width: 100%; border-collapse: collapse; font-size: 0.9rem; min-width: 400px; }
-        th { text-align: left; border-bottom: 2px solid var(--accent); padding: 12px; color: var(--accent); }
-        td { padding: 12px; border-bottom: 1px solid var(--secondary); color: white; }
-        .overdue-txt { color: #ff5e5e; font-weight: 700; }
-        .current-txt { color: #52ff52; font-weight: 700; }
-
-        /* Global UI Items */
-        .wa-float { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; z-index: 3000; box-shadow: 0 8px 20px rgba(0,0,0,0.3); text-decoration: none; }
-        footer { background: var(--primary); color: white; padding: 40px 5%; text-align: center; border-top: 5px solid var(--accent); margin-top: 40px; }
-        
-        .view { display: none; }
-        .view.active { display: block; animation: slideUp 0.4s ease; }
-        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-
-        @media (min-width: 1024px) {
-            .grid { grid-template-columns: repeat(3, 1fr); }
+        :root {
+            --bg-dark: #070b14;
+            --card-bg: #101726;
+            --accent-cyan: #00d7f3;
+            --btn-green: #1ed760;
+            --warn-yellow: #ffb000;
+            --text-white: #ffffff;
+            --text-muted: #94a3b8;
         }
+
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background-color: var(--bg-dark); color: var(--text-white); overflow-x: hidden; }
+        .container { max-width: 500px; margin: 0 auto; padding: 15px; }
+
+        /* ADSTERRA STYLING */
+        .ad-container {
+            margin: 20px 0;
+            text-align: center;
+            min-height: 50px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* HEADER */
+        header { background: var(--bg-dark); padding: 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); position: sticky; top: 0; z-index: 1000; }
+        .brand-layout { display: flex; align-items: center; gap: 10px; }
+        .brand-icon { background: var(--accent-cyan); color: #000; padding: 7px; border-radius: 6px; }
+        .brand-name { font-weight: 700; font-size: 16px; }
+        .menu-toggle { color: var(--text-white); font-size: 24px; cursor: pointer; }
+
+        /* MENU */
+        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); display: none; z-index: 1500; }
+        .side-menu { position: fixed; top: 0; right: -300px; width: 280px; height: 100%; background: var(--card-bg); z-index: 2000; transition: 0.3s; padding: 30px 20px; box-shadow: -10px 0 30px rgba(0,0,0,0.5); }
+        .side-menu.active { right: 0; }
+        .overlay.active { display: block; }
+        .menu-close { text-align: right; font-size: 28px; margin-bottom: 30px; cursor: pointer; }
+        .menu-list { list-style: none; padding: 0; }
+        .menu-list li { margin: 25px 0; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px; }
+        .menu-list a { color: var(--text-white); text-decoration: none; display: flex; align-items: center; gap: 15px; font-size: 16px; }
+        .menu-list i { color: var(--accent-cyan); width: 25px; }
+
+        /* CONTENT */
+        .profile-area { text-align: center; padding: 25px 0; }
+        .profile-area h1 { font-size: 28px; margin: 0; font-weight: 800; }
+        .profile-area p { color: var(--accent-cyan); font-size: 13px; margin-top: 8px; }
+        .home-service { color: var(--btn-green); font-weight: 600; font-size: 14px; margin-top: 15px; }
+        .hours-card { border: 1px solid var(--warn-yellow); border-radius: 15px; padding: 18px; margin: 20px 0; background: rgba(0,0,0,0.3); }
+        .service-card { background: var(--card-bg); border-radius: 20px; padding: 25px; margin-bottom: 35px; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        .icon-box { font-size: 38px; color: var(--accent-cyan); margin-bottom: 15px; }
+        .service-card h2 { font-size: 22px; margin: 0 0 10px 0; font-weight: 700; }
+        .service-card p { font-size: 14px; color: var(--text-muted); line-height: 1.5; margin-bottom: 20px; }
+        .book-btn { background: var(--btn-green); color: #000; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 10px; padding: 14px; border-radius: 12px; font-weight: 800; font-size: 15px; }
+        .card-share { margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: space-between; }
+        .share-icons a { color: var(--accent-cyan); font-size: 18px; text-decoration: none; margin-left: 10px; }
+        footer { text-align: center; padding: 30px; font-size: 12px; color: var(--text-muted); border-top: 1px solid rgba(255,255,255,0.05); }
     </style>
 </head>
 <body>
 
-    <header>
-        <a href="#" class="logo-box" onclick="showView('home')">
-            <img src="logo.jpg" alt="Logo" class="logo-img" onerror="this.style.display='none'">
-            <span>HOME SAFETY</span>
-        </a>
-        <div style="cursor:pointer; font-size:1.6rem;" onclick="toggleMenu()"><i class="fas fa-bars-staggered"></i></div>
-    </header>
+    <!-- ADSTERRA POPUNDER / SOCIAL BAR (Global scripts) -->
+    <!-- PASTE YOUR ADSTERRA POPUNDER OR SOCIAL BAR SCRIPT HERE -->
 
-    <nav class="sidebar" id="sidebar">
-        <div style="position:absolute; top:20px; left:20px; color:var(--accent); cursor:pointer;" onclick="toggleMenu()"><i class="fas fa-times"></i></div>
-        <a href="#home" onclick="showView('home')"><i class="fas fa-house"></i> Home Dashboard</a>
-        <a href="#feed" onclick="showView('feed')"><i class="fas fa-video"></i> Full Work Feed</a>
-        <a href="#aging" onclick="showView('aging')"><i class="fas fa-file-invoice-dollar"></i> Private Aging Tracker</a>
-        <a href="#contact" onclick="showView('contact')"><i class="fas fa-envelope"></i> Contact Us</a>
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+    <nav class="side-menu" id="sideMenu">
+        <div class="menu-close" onclick="toggleMenu()"><i class="fa-solid fa-xmark"></i></div>
+        <ul class="menu-list">
+            <li><a href="https://www.facebook.com/Safety.om" target="_blank"><i class="fa-brands fa-facebook"></i> Facebook Page</a></li>
+            <li><a href="https://www.instagram.com/safetyom" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram Profile</a></li>
+            <li><a href="https://www.youtube.com/@homesafetysolutions" target="_blank"><i class="fa-brands fa-youtube"></i> YouTube Channel</a></li>
+            <li><a href="https://goo.gl/maps/QS7sKHY7L1HKGDTo7" target="_blank"><i class="fa-solid fa-location-dot"></i> Our Location</a></li>
+            <li><a href="https://www.google.com/search?q=Shepherd+Cricket" target="_blank"><i class="fa-solid fa-cricket-bat-ball"></i> Shepherd Cricket</a></li>
+            <li><a href="https://wa.me/96872396139" target="_blank"><i class="fa-solid fa-phone"></i> Contact Us</a></li>
+        </ul>
     </nav>
 
-    <a href="https://wa.me/96872396139" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <header>
+        <div class="brand-layout">
+            <div class="brand-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="brand-name">HOME SAFETY</div>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()"><i class="fa-solid fa-bars-staggered"></i></div>
+    </header>
 
     <main class="container">
-        
-        <!-- HOME VIEW (LATEST WORK) -->
-        <section id="home" class="view active">
-            <div class="hero">
-                <img src="logo.jpg" alt="Logo" class="hero-logo" onerror="this.style.display='none'">
-                <h1>Live Project Updates</h1>
-                <p>CCTV, WiFi & Engineering Excellence in Muscat</p>
-                <div style="background:var(--accent); color:var(--primary); padding:6px 20px; border-radius:20px; font-weight:700; margin-top:15px; display:inline-block; font-size: 0.8rem;">ESTABLISHED 2016</div>
-            </div>
-            
-            <h2 style="margin-bottom:20px; border-left: 5px solid var(--accent); padding-left: 10px;">Newest Work Videos</h2>
-            <div class="grid" id="home-videos">
-                <!-- Videos will load here via JS -->
-            </div>
+
+        <!-- 1. TOP AD PLACEMENT -->
+        <div class="ad-container">
+            <!-- PASTE YOUR ADSTERRA BANNER CODE (e.g. 320x50 or 728x90) HERE -->
+            <span style="color:#222; font-size:10px;">Advertisement</span>
+        </div>
+
+        <section class="profile-area">
+            <h1>HOME SAFETY SOLUTIONS</h1>
+            <p>High-Quality Home & Security Solutions in Muscat</p>
+            <div class="home-service"><i class="fa-solid fa-truck-fast"></i> Home Door Service Available</div>
         </section>
 
-        <!-- FEED VIEW (ALL VIDEOS) -->
-        <section id="feed" class="view">
-            <h2 style="text-align:center; margin-bottom:20px;">Work Video Archive</h2>
-            <div class="grid" id="all-videos">
-                <!-- Full archive loads here -->
-            </div>
-        </section>
+        <div class="hours-card">
+            <div style="color:var(--warn-yellow); font-weight:700;">Working Hours:</div>
+            <div style="font-size:14px; margin-top:8px;">Sat to Thur: 08:30 AM - 10:00 PM<br>Friday: 04:00 PM - 10:00 PM</div>
+        </div>
 
-        <!-- AGING TRACKER VIEW (SAFE DATA) -->
-        <section id="aging" class="view">
-            <h2 style="text-align:center; color:var(--primary); margin-bottom:15px;">Payment Aging Tracker</h2>
-            <div class="aging-box">
-                <p style="font-size:0.8rem; color:var(--accent); margin-bottom:10px;">* Data is stored safely only on your device.</p>
-                <input type="text" id="c-name" placeholder="Customer Name">
-                <input type="number" id="c-amt" placeholder="Pending Amount (OMR)">
-                <input type="date" id="c-date">
-                <button class="btn-add" onclick="addRecord()">Save Customer Record</button>
-                
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                            <tr><th>Customer</th><th>Amount</th><th>Status</th><th>Action</th></tr>
-                        </thead>
-                        <tbody id="aging-table"></tbody>
-                    </table>
+        <!-- SERVICE: CCTV -->
+        <div class="service-card">
+            <div class="icon-box"><i class="fa-solid fa-video"></i></div>
+            <h2>CCTV Solutions</h2>
+            <p>High-definition security cameras, IP systems, mobile viewing setup, and secure home recording configuration.</p>
+            <a href="https://wa.me/96872396139" class="book-btn">Book Now</a>
+            <div class="card-share">
+                <div style="font-size:11px; color:var(--text-muted);">SHARE SERVICE:</div>
+                <div class="share-icons">
+                    <a href="#" onclick="share('fb')"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" onclick="share('wa')"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <!-- CONTACT VIEW -->
-        <section id="contact" class="view">
-            <div class="card" style="text-align:left; max-width:600px; margin:0 auto;">
-                <h2 style="color:var(--primary); margin-bottom:15px;">Business Information</h2>
-                <p><strong>📍 Location:</strong> Al Amarat, Muscat, Oman</p>
-                <p><strong>📞 WhatsApp:</strong> +968 72396139</p>
-                <p><strong>✉️ Email:</strong> homemantinace.om@gmail.com</p>
-                <div style="margin-top:20px; display:flex; gap:15px;">
-                    <a href="https://www.facebook.com/Safety.om" style="font-size:2rem; color:var(--primary);"><i class="fab fa-facebook"></i></a>
-                    <a href="https://www.instagram.com/safetyom/" style="font-size:2rem; color:var(--primary);"><i class="fab fa-instagram"></i></a>
+        <!-- 2. MIDDLE AD PLACEMENT -->
+        <div class="ad-container">
+            <!-- PASTE YOUR ADSTERRA BANNER CODE (e.g. 300x250 Native) HERE -->
+            <span style="color:#222; font-size:10px;">Advertisement</span>
+        </div>
+
+        <!-- SERVICE: WI-FI -->
+        <div class="service-card">
+            <div class="icon-box"><i class="fa-solid fa-wifi"></i></div>
+            <h2>Wi-Fi Router Solutions</h2>
+            <p>High-speed wireless range extension and bridging setups to eliminate dead-zones across your entire property.</p>
+            <a href="https://wa.me/96872396139" class="book-btn">Book Now</a>
+            <div class="card-share">
+                <div style="font-size:11px; color:var(--text-muted);">SHARE SERVICE:</div>
+                <div class="share-icons">
+                    <a href="#" onclick="share('fb')"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" onclick="share('wa')"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
             </div>
+        </div>
+
+        <!-- 3. BOTTOM AD PLACEMENT -->
+        <div class="ad-container">
+            <!-- PASTE YOUR ADSTERRA BANNER CODE HERE -->
+            <span style="color:#222; font-size:10px;">Advertisement</span>
+        </div>
+
+        <section style="text-align:center; padding: 20px;">
+            <a href="https://goo.gl/maps/QS7sKHY7L1HKGDTo7" target="_blank" style="color:var(--accent-cyan); text-decoration:none; font-weight:700;">View Location on Google Maps ></a>
         </section>
 
     </main>
 
-    <footer>
-        <p><strong>HOME SAFETY SOLUTIONS</strong></p>
-        <p>Al Amarat | Muscat | Since 2016</p>
-        <p style="opacity:0.5; font-size:0.7rem; margin-top:20px;">&copy; 2016-2026 | Created by Kamran Khan</p>
-    </footer>
+    <footer>&copy; 2026 Home Safety Solutions. All Rights Reserved.</footer>
 
     <script>
-        // 1. STABLE VIDEO DATABASE
-        // To add a new video, just put the YouTube ID here!
-        const myWork = [
-            { id: "WfoWTm6cilA", title: "CCTV Installation Al Amarat" },
-            { id: "PdKC5F-H0Ap", title: "Hikvision PTZ 360 Camera Setup" },
-            { id: "dAQQacUHMns", title: "CCTV Camera Installation Review" }
-        ];
-
-        function loadVideos() {
-            const homeDiv = document.getElementById('home-videos');
-            const feedDiv = document.getElementById('all-videos');
-            homeDiv.innerHTML = ''; 
-            feedDiv.innerHTML = '';
-
-            myWork.forEach(vid => {
-                const html = `
-                    <div class="card">
-                        <div class="video-box">
-                            <iframe src="https://www.youtube.com/embed/${vid.id}?rel=0" allowfullscreen></iframe>
-                        </div>
-                        <div class="video-title">${vid.title}</div>
-                    </div>
-                `;
-                homeDiv.innerHTML += html;
-                feedDiv.innerHTML += html;
-            });
-        }
-
-        // 2. AGING TRACKER WITH MEMORY
-        let records = JSON.parse(localStorage.getItem('hss_aging')) || [];
-
-        function updateTable() {
-            const tableBody = document.getElementById('aging-table');
-            tableBody.innerHTML = '';
-            const today = new Date();
-
-            records.forEach((rec, i) => {
-                const dueDate = new Date(rec.date);
-                const diffDays = Math.floor((today - dueDate) / (1000 * 60 * 60 * 24));
-                const status = diffDays > 0 ? `<span class="overdue-txt">${diffDays} Days Overdue</span>` : `<span class="current-txt">Current</span>`;
-                
-                tableBody.innerHTML += `
-                    <tr>
-                        <td>${rec.name}</td>
-                        <td>${rec.amt} OMR</td>
-                        <td>${status}</td>
-                        <td><button onclick="delRec(${i})" style="background:none; border:none; color:#ff4d4d; cursor:pointer; font-size:1.2rem;">❌</button></td>
-                    </tr>
-                `;
-            });
-        }
-
-        function addRecord() {
-            const name = document.getElementById('c-name').value;
-            const amt = document.getElementById('c-amt').value;
-            const date = document.getElementById('c-date').value;
-            if(!name || !amt || !date) return alert("Fill all fields");
-
-            records.push({ name, amt, date });
-            localStorage.setItem('hss_aging', JSON.stringify(records));
-            updateTable();
-            document.getElementById('c-name').value = '';
-            document.getElementById('c-amt').value = '';
-        }
-
-        function delRec(i) {
-            records.splice(i, 1);
-            localStorage.setItem('hss_aging', JSON.stringify(records));
-            updateTable();
-        }
-
-        // 3. UI ENGINE
-        function toggleMenu() { document.getElementById('sidebar').classList.toggle('active'); }
-        
-        function showView(id) {
-            document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-            document.getElementById(id).classList.add('active');
-            if(document.getElementById('sidebar').classList.contains('active')) toggleMenu();
-            window.scrollTo(0,0);
-        }
-
-        window.onload = () => {
-            loadVideos();
-            updateTable();
-        };
+        function toggleMenu() { document.getElementById('sideMenu').classList.toggle('active'); document.getElementById('overlay').classList.toggle('active'); }
+        function share(p) { const url = window.location.href; if(p==='fb') window.open("https://www.facebook.com/sharer/sharer.php?u="+encodeURIComponent(url)); else window.open("https://api.whatsapp.com/send?text="+encodeURIComponent(url)); }
     </script>
+
+    <!-- 4. FLOATING AD (Social Bar) -->
+    <!-- PASTE YOUR ADSTERRA SOCIAL BAR SCRIPT HERE -->
+
 </body>
-                                                             </html>
+                    </html>
