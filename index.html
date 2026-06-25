@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Safety Solutions - Muscat</title>
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -16,30 +17,49 @@
             --text-muted: #94a3b8;
         }
 
-        body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background-color: var(--bg-dark); color: var(--text-white); overflow-x: hidden; }
+        body { 
+            font-family: 'Segoe UI', sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: var(--bg-dark); 
+            color: var(--text-white);
+            overflow-x: hidden;
+        }
+
         .container { max-width: 500px; margin: 0 auto; padding: 15px; }
 
-        /* ADSTERRA STYLING */
-        .ad-container {
-            margin: 20px 0;
+        /* ADSTERRA PLACEHOLDER */
+        .ad-slot {
+            margin: 10px 0;
             text-align: center;
+            background: rgba(255,255,255,0.02);
+            border-radius: 8px;
             min-height: 50px;
-            background: rgba(255,255,255,0.03);
-            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
+            font-size: 10px;
+            color: #333;
         }
 
         /* HEADER */
-        header { background: var(--bg-dark); padding: 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); position: sticky; top: 0; z-index: 1000; }
+        header {
+            background: var(--bg-dark);
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
         .brand-layout { display: flex; align-items: center; gap: 10px; }
         .brand-icon { background: var(--accent-cyan); color: #000; padding: 7px; border-radius: 6px; }
-        .brand-name { font-weight: 700; font-size: 16px; }
+        .brand-name { font-weight: 700; font-size: 16px; letter-spacing: 0.5px; }
         .menu-toggle { color: var(--text-white); font-size: 24px; cursor: pointer; }
 
-        /* MENU */
+        /* RIGHT SIDE MENU */
         .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); display: none; z-index: 1500; }
         .side-menu { position: fixed; top: 0; right: -300px; width: 280px; height: 100%; background: var(--card-bg); z-index: 2000; transition: 0.3s; padding: 30px 20px; box-shadow: -10px 0 30px rgba(0,0,0,0.5); }
         .side-menu.active { right: 0; }
@@ -50,27 +70,57 @@
         .menu-list a { color: var(--text-white); text-decoration: none; display: flex; align-items: center; gap: 15px; font-size: 16px; }
         .menu-list i { color: var(--accent-cyan); width: 25px; }
 
-        /* CONTENT */
+        /* PROFILE SECTION */
         .profile-area { text-align: center; padding: 25px 0; }
         .profile-area h1 { font-size: 28px; margin: 0; font-weight: 800; }
         .profile-area p { color: var(--accent-cyan); font-size: 13px; margin-top: 8px; }
         .home-service { color: var(--btn-green); font-weight: 600; font-size: 14px; margin-top: 15px; }
+
+        /* WORKING HOURS */
         .hours-card { border: 1px solid var(--warn-yellow); border-radius: 15px; padding: 18px; margin: 20px 0; background: rgba(0,0,0,0.3); }
-        .service-card { background: var(--card-bg); border-radius: 20px; padding: 25px; margin-bottom: 35px; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        .hours-label { color: var(--warn-yellow); font-weight: 700; display: flex; align-items: center; gap: 8px; font-size: 15px; }
+        .hours-text { font-size: 14px; margin-top: 8px; color: #eee; }
+
+        /* SERVICE CARDS (Cleaned: Robot Icon Removed) */
+        .service-card { 
+            background: var(--card-bg); 
+            border-radius: 20px; 
+            padding: 25px; 
+            margin-bottom: 35px; 
+            position: relative; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
         .icon-box { font-size: 38px; color: var(--accent-cyan); margin-bottom: 15px; }
         .service-card h2 { font-size: 22px; margin: 0 0 10px 0; font-weight: 700; }
         .service-card p { font-size: 14px; color: var(--text-muted); line-height: 1.5; margin-bottom: 20px; }
-        .book-btn { background: var(--btn-green); color: #000; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 10px; padding: 14px; border-radius: 12px; font-weight: 800; font-size: 15px; }
-        .card-share { margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: space-between; }
-        .share-icons a { color: var(--accent-cyan); font-size: 18px; text-decoration: none; margin-left: 10px; }
+
+        .book-btn { 
+            background: var(--btn-green); color: #000; text-decoration: none; 
+            display: flex; align-items: center; justify-content: center; gap: 10px; 
+            padding: 14px; border-radius: 12px; font-weight: 800; font-size: 15px;
+        }
+
+        /* IN-CARD SHARE BAR */
+        .card-share {
+            margin-top: 20px; padding-top: 15px; 
+            border-top: 1px solid rgba(255,255,255,0.05);
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .share-txt { font-size: 11px; color: var(--text-muted); font-weight: 700; letter-spacing: 1px; }
+        .share-icons { display: flex; gap: 15px; }
+        .share-icons a { color: var(--accent-cyan); font-size: 18px; text-decoration: none; }
+
+        /* MAP LINK */
+        .map-section { text-align: center; padding: 40px 0; }
+        .map-link { color: var(--accent-cyan); text-decoration: none; font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+
         footer { text-align: center; padding: 30px; font-size: 12px; color: var(--text-muted); border-top: 1px solid rgba(255,255,255,0.05); }
+
     </style>
 </head>
 <body>
 
-    <!-- ADSTERRA POPUNDER / SOCIAL BAR (Global scripts) -->
-    <!-- PASTE YOUR ADSTERRA POPUNDER OR SOCIAL BAR SCRIPT HERE -->
-
+    <!-- OVERLAY & SIDE MENU -->
     <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
     <nav class="side-menu" id="sideMenu">
         <div class="menu-close" onclick="toggleMenu()"><i class="fa-solid fa-xmark"></i></div>
@@ -94,11 +144,8 @@
 
     <main class="container">
 
-        <!-- 1. TOP AD PLACEMENT -->
-        <div class="ad-container">
-            <!-- PASTE YOUR ADSTERRA BANNER CODE (e.g. 320x50 or 728x90) HERE -->
-            <span style="color:#222; font-size:10px;">Advertisement</span>
-        </div>
+        <!-- ADSTERRA SLOT 1 -->
+        <div class="ad-slot">ADSTERRA AD PLACEMENT</div>
 
         <section class="profile-area">
             <h1>HOME SAFETY SOLUTIONS</h1>
@@ -106,68 +153,175 @@
             <div class="home-service"><i class="fa-solid fa-truck-fast"></i> Home Door Service Available</div>
         </section>
 
+        <!-- HOURS -->
         <div class="hours-card">
-            <div style="color:var(--warn-yellow); font-weight:700;">Working Hours:</div>
-            <div style="font-size:14px; margin-top:8px;">Sat to Thur: 08:30 AM - 10:00 PM<br>Friday: 04:00 PM - 10:00 PM</div>
+            <div class="hours-label"><i class="fa-solid fa-clock"></i> Working Hours:</div>
+            <div class="hours-text">Sat to Thur: 08:30 AM - 10:00 PM<br>Friday: 04:00 PM - 10:00 PM</div>
+            <div style="color:var(--btn-green); font-size:12px; margin-top:10px; font-weight:700;">🚨 Emergency Available 24/7</div>
         </div>
 
-        <!-- SERVICE: CCTV -->
+        <!-- 1. CCTV SOLUTIONS -->
         <div class="service-card">
             <div class="icon-box"><i class="fa-solid fa-video"></i></div>
             <h2>CCTV Solutions</h2>
             <p>High-definition security cameras, IP systems, mobile viewing setup, and secure home recording configuration.</p>
-            <a href="https://wa.me/96872396139" class="book-btn">Book Now</a>
+            <a href="https://wa.me/96872396139?text=I%20want%20to%20book%20CCTV%20Solutions" class="book-btn"><i class="fa-brands fa-whatsapp"></i> Book Now</a>
             <div class="card-share">
-                <div style="font-size:11px; color:var(--text-muted);">SHARE SERVICE:</div>
+                <div class="share-txt">SHARE SERVICE:</div>
                 <div class="share-icons">
-                    <a href="#" onclick="share('fb')"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#" onclick="share('wa')"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="javascript:void(0)" onclick="shareService('fb', 'CCTV Solutions')"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="javascript:void(0)" onclick="shareService('wa', 'CCTV Solutions')"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="javascript:void(0)" onclick="shareService('copy', 'CCTV Solutions')"><i class="fa-solid fa-link"></i></a>
                 </div>
             </div>
         </div>
 
-        <!-- 2. MIDDLE AD PLACEMENT -->
-        <div class="ad-container">
-            <!-- PASTE YOUR ADSTERRA BANNER CODE (e.g. 300x250 Native) HERE -->
-            <span style="color:#222; font-size:10px;">Advertisement</span>
+        <!-- 2. INTERCOM SOLUTIONS -->
+        <div class="service-card">
+            <div class="icon-box"><i class="fa-solid fa-microphone-lines"></i></div>
+            <h2>Intercom Solutions</h2>
+            <p>Professional Villa & Apartment Video/Audio intercom loop setups to manage physical access gates securely.</p>
+            <a href="https://wa.me/96872396139?text=I%20want%20to%20book%20Intercom%20Solutions" class="book-btn"><i class="fa-brands fa-whatsapp"></i> Book Now</a>
+            <div class="card-share">
+                <div class="share-txt">SHARE SERVICE:</div>
+                <div class="share-icons">
+                    <a href="javascript:void(0)" onclick="shareService('fb', 'Intercom Solutions')"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="javascript:void(0)" onclick="shareService('wa', 'Intercom Solutions')"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="javascript:void(0)" onclick="shareService('copy', 'Intercom Solutions')"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
         </div>
 
-        <!-- SERVICE: WI-FI -->
+        <!-- 3. WI-FI ROUTER SOLUTIONS -->
         <div class="service-card">
             <div class="icon-box"><i class="fa-solid fa-wifi"></i></div>
             <h2>Wi-Fi Router Solutions</h2>
             <p>High-speed wireless range extension and bridging setups to eliminate dead-zones across your entire property.</p>
-            <a href="https://wa.me/96872396139" class="book-btn">Book Now</a>
+            <a href="https://wa.me/96872396139?text=I%20want%20to%20book%20Wi-Fi%20Router%20Solutions" class="book-btn"><i class="fa-brands fa-whatsapp"></i> Book Now</a>
             <div class="card-share">
-                <div style="font-size:11px; color:var(--text-muted);">SHARE SERVICE:</div>
+                <div class="share-txt">SHARE SERVICE:</div>
                 <div class="share-icons">
-                    <a href="#" onclick="share('fb')"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#" onclick="share('wa')"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="javascript:void(0)" onclick="shareService('fb', 'Wi-Fi Router Solutions')"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="javascript:void(0)" onclick="shareService('wa', 'Wi-Fi Router Solutions')"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="javascript:void(0)" onclick="shareService('copy', 'Wi-Fi Router Solutions')"><i class="fa-solid fa-link"></i></a>
                 </div>
             </div>
         </div>
 
-        <!-- 3. BOTTOM AD PLACEMENT -->
-        <div class="ad-container">
-            <!-- PASTE YOUR ADSTERRA BANNER CODE HERE -->
-            <span style="color:#222; font-size:10px;">Advertisement</span>
+        <!-- ADSTERRA SLOT 2 -->
+        <div class="ad-slot">ADSTERRA AD PLACEMENT</div>
+
+        <!-- 4. PLUMBING SOLUTIONS -->
+        <div class="service-card">
+            <div class="icon-box"><i class="fa-solid fa-faucet-drip"></i></div>
+            <h2>Plumbing Solutions</h2>
+            <p>Fixing showers, mixers, pipes, and all core water leakages professionally with durable structural configurations.</p>
+            <a href="https://wa.me/96872396139?text=I%20want%20to%20book%20Plumbing%20Solutions" class="book-btn"><i class="fa-brands fa-whatsapp"></i> Book Now</a>
+            <div class="card-share">
+                <div class="share-txt">SHARE SERVICE:</div>
+                <div class="share-icons">
+                    <a href="javascript:void(0)" onclick="shareService('fb', 'Plumbing Solutions')"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="javascript:void(0)" onclick="shareService('wa', 'Plumbing Solutions')"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="javascript:void(0)" onclick="shareService('copy', 'Plumbing Solutions')"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
         </div>
 
-        <section style="text-align:center; padding: 20px;">
-            <a href="https://goo.gl/maps/QS7sKHY7L1HKGDTo7" target="_blank" style="color:var(--accent-cyan); text-decoration:none; font-weight:700;">View Location on Google Maps ></a>
+        <!-- 5. ELECTRICITY SOLUTIONS -->
+        <div class="service-card">
+            <div class="icon-box"><i class="fa-solid fa-bolt-lightning"></i></div>
+            <h2>Electricity Solutions</h2>
+            <p>Full wiring, DB dressing, lights, fans, and troubleshooting repairs done safely by licensed technical experts.</p>
+            <a href="https://wa.me/96872396139?text=I%20want%20to%20book%20Electricity%20Solutions" class="book-btn"><i class="fa-brands fa-whatsapp"></i> Book Now</a>
+            <div class="card-share">
+                <div class="share-txt">SHARE SERVICE:</div>
+                <div class="share-icons">
+                    <a href="javascript:void(0)" onclick="shareService('fb', 'Electricity Solutions')"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="javascript:void(0)" onclick="shareService('wa', 'Electricity Solutions')"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="javascript:void(0)" onclick="shareService('copy', 'Electricity Solutions')"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. DVR/NVR UNBANNED SOLUTIONS -->
+        <div class="service-card">
+            <div class="icon-box"><i class="fa-solid fa-unlock-keyhole"></i></div>
+            <h2>DVR/NVR Unbanned</h2>
+            <p>Professional firmware reset, password restoration, and Hik-Connect account unbinding services safely.</p>
+            <a href="https://wa.me/96872396139?text=I%20want%20to%20book%20DVR/NVR%20Unbanned%20Solutions" class="book-btn"><i class="fa-brands fa-whatsapp"></i> Book Now</a>
+            <div class="card-share">
+                <div class="share-txt">SHARE SERVICE:</div>
+                <div class="share-icons">
+                    <a href="javascript:void(0)" onclick="shareService('fb', 'DVR/NVR Unbanned')"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="javascript:void(0)" onclick="shareService('wa', 'DVR/NVR Unbanned')"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="javascript:void(0)" onclick="shareService('copy', 'DVR/NVR Unbanned')"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. ELECTRIC DOOR LOCK SOLUTIONS -->
+        <div class="service-card">
+            <div class="icon-box"><i class="fa-solid fa-lock"></i></div>
+            <h2>Electric Door Lock</h2>
+            <p>Installation of magnetic locks, access control systems, and smart manual lock replacements for maximum safety.</p>
+            <a href="https://wa.me/96872396139?text=I%20want%20to%20book%20Electric%20Door%20Lock%20Solutions" class="book-btn"><i class="fa-brands fa-whatsapp"></i> Book Now</a>
+            <div class="card-share">
+                <div class="share-txt">SHARE SERVICE:</div>
+                <div class="share-icons">
+                    <a href="javascript:void(0)" onclick="shareService('fb', 'Electric Door Lock')"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="javascript:void(0)" onclick="shareService('wa', 'Electric Door Lock')"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="javascript:void(0)" onclick="shareService('copy', 'Electric Door Lock')"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8. IP CAMERA UNBANNED SOLUTIONS -->
+        <div class="service-card">
+            <div class="icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+            <h2>IP Camera Unbanned</h2>
+            <p>Firmware restoration and unbinding of IP cameras from previously locked cloud accounts cleanly.</p>
+            <a href="https://wa.me/96872396139?text=I%20want%20to%20book%20IP%20Camera%20Unbanned%20Solutions" class="book-btn"><i class="fa-brands fa-whatsapp"></i> Book Now</a>
+            <div class="card-share">
+                <div class="share-txt">SHARE SERVICE:</div>
+                <div class="share-icons">
+                    <a href="javascript:void(0)" onclick="shareService('fb', 'IP Camera Unbanned')"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="javascript:void(0)" onclick="shareService('wa', 'IP Camera Unbanned')"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="javascript:void(0)" onclick="shareService('copy', 'IP Camera Unbanned')"><i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- LOCATION -->
+        <section class="map-section">
+            <i class="fa-solid fa-location-dot" style="color:var(--accent-cyan); font-size:30px;"></i>
+            <a href="https://goo.gl/maps/QS7sKHY7L1HKGDTo7" target="_blank" class="map-link">View Location on Google Maps ></a>
         </section>
 
     </main>
 
-    <footer>&copy; 2026 Home Safety Solutions. All Rights Reserved.</footer>
+    <footer>
+        &copy; 2026 Home Safety Solutions. All Rights Reserved.
+    </footer>
 
     <script>
-        function toggleMenu() { document.getElementById('sideMenu').classList.toggle('active'); document.getElementById('overlay').classList.toggle('active'); }
-        function share(p) { const url = window.location.href; if(p==='fb') window.open("https://www.facebook.com/sharer/sharer.php?u="+encodeURIComponent(url)); else window.open("https://api.whatsapp.com/send?text="+encodeURIComponent(url)); }
+        // TOGGLE MENU
+        function toggleMenu() {
+            document.getElementById('sideMenu').classList.toggle('active');
+            document.getElementById('overlay').classList.toggle('active');
+        }
+
+        // SHARE LOGIC
+        function shareService(platform, name) {
+            const url = window.location.href;
+            const text = "Check out " + name + " at Home Safety Solutions Muscat! ";
+            if(platform === 'fb') {
+                window.open("https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url), "_blank");
+            } else if(platform === 'wa') {
+                window.open("https://api.whatsapp.com/send?text=" + encodeURIComponent(text + url), "_blank");
+            } else if(platform === 'copy') {
+                navigator.clipboard.writeText(url).then(() => { alert("Link copied for " + name); });
+            }
+        }
     </script>
-
-    <!-- 4. FLOATING AD (Social Bar) -->
-    <!-- PASTE YOUR ADSTERRA SOCIAL BAR SCRIPT HERE -->
-
 </body>
-                    </html>
+    </html>
