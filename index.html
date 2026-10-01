@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="cryptomus" content="6662a76a" />
     <title>Home Safety Solutions - Muscat</title>
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -27,20 +28,6 @@
         }
 
         .container { max-width: 500px; margin: 0 auto; padding: 15px; }
-
-        /* ADSTERRA PLACEHOLDER */
-        .ad-slot {
-            margin: 10px 0;
-            text-align: center;
-            background: rgba(255,255,255,0.02);
-            border-radius: 8px;
-            min-height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 10px;
-            color: #333;
-        }
 
         /* HEADER */
         header {
@@ -81,7 +68,7 @@
         .hours-label { color: var(--warn-yellow); font-weight: 700; display: flex; align-items: center; gap: 8px; font-size: 15px; }
         .hours-text { font-size: 14px; margin-top: 8px; color: #eee; }
 
-        /* SERVICE CARDS (Cleaned: Robot Icon Removed) */
+        /* SERVICE CARDS */
         .service-card { 
             background: var(--card-bg); 
             border-radius: 20px; 
@@ -99,229 +86,70 @@
             display: flex; align-items: center; justify-content: center; gap: 10px; 
             padding: 14px; border-radius: 12px; font-weight: 800; font-size: 15px;
         }
-
-        /* IN-CARD SHARE BAR */
-        .card-share {
-            margin-top: 20px; padding-top: 15px; 
-            border-top: 1px solid rgba(255,255,255,0.05);
-            display: flex; align-items: center; justify-content: space-between;
-        }
-        .share-txt { font-size: 11px; color: var(--text-muted); font-weight: 700; letter-spacing: 1px; }
-        .share-icons { display: flex; gap: 15px; }
-        .share-icons a { color: var(--accent-cyan); font-size: 18px; text-decoration: none; }
-
-        /* MAP LINK */
-        .map-section { text-align: center; padding: 40px 0; }
-        .map-link { color: var(--accent-cyan); text-decoration: none; font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; gap: 8px; }
-
-        footer { text-align: center; padding: 30px; font-size: 12px; color: var(--text-muted); border-top: 1px solid rgba(255,255,255,0.05); }
-
     </style>
 </head>
 <body>
 
-    <!-- OVERLAY & SIDE MENU -->
-    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
-    <nav class="side-menu" id="sideMenu">
-        <div class="menu-close" onclick="toggleMenu()"><i class="fa-solid fa-xmark"></i></div>
-        <ul class="menu-list">
-            <li><a href="https://www.facebook.com/Safety.om" target="_blank"><i class="fa-brands fa-facebook"></i> Facebook Page</a></li>
-            <li><a href="https://www.instagram.com/safetyom" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram Profile</a></li>
-            <li><a href="https://www.youtube.com/@homesafetysolutions" target="_blank"><i class="fa-brands fa-youtube"></i> YouTube Channel</a></li>
-            <li><a href="https://goo.gl/maps/QS7sKHY7L1HKGDTo7" target="_blank"><i class="fa-solid fa-location-dot"></i> Our Location</a></li>
-            <li><a href="https://www.google.com/search?q=Shepherd+Cricket" target="_blank"><i class="fa-solid fa-cricket-bat-ball"></i> Shepherd Cricket</a></li>
-            <li><a href="https://wa.me/96872396139" target="_blank"><i class="fa-solid fa-phone"></i> Contact Us</a></li>
-        </ul>
-    </nav>
-
     <header>
         <div class="brand-layout">
             <div class="brand-icon"><i class="fa-solid fa-shield-halved"></i></div>
-            <div class="brand-name">HOME SAFETY</div>
+            <div class="brand-name">Home Safety Solutions</div>
         </div>
-        <div class="menu-toggle" onclick="toggleMenu()"><i class="fa-solid fa-bars-staggered"></i></div>
+        <div class="menu-toggle" id="menuOpen"><i class="fa-solid fa-bars"></i></div>
     </header>
 
-    <main class="container">
+    <div class="overlay" id="overlay"></div>
+    <div class="side-menu" id="sideMenu">
+        <div class="menu-close" id="menuClose"><i class="fa-solid fa-xmark"></i></div>
+        <ul class="menu-list">
+            <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="#"><i class="fa-solid fa-gears"></i> Services</a></li>
+            <li><a href="#"><i class="fa-solid fa-clock"></i> Working Hours</a></li>
+            <li><a href="#"><i class="fa-solid fa-phone"></i> Contact Us</a></li>
+        </ul>
+    </div>
 
-        <!-- ADSTERRA SLOT 1 -->
-        <div class="ad-slot">ADSTERRA AD PLACEMENT</div>
-
+    <div class="container">
         <section class="profile-area">
-            <h1>HOME SAFETY SOLUTIONS</h1>
-            <p>High-Quality Home & Security Solutions in Muscat</p>
-            <div class="home-service"><i class="fa-solid fa-truck-fast"></i> Home Door Service Available</div>
+            <h1>Home Safety Solutions</h1>
+            <p><i class="fa-solid fa-location-dot"></i> Muscat, Sultanate of Oman</p>
+            <div class="home-service"><i class="fa-solid fa-truck-fast"></i> Home Services Available</div>
         </section>
 
-        <!-- HOURS -->
-        <div class="hours-card">
-            <div class="hours-label"><i class="fa-solid fa-clock"></i> Working Hours:</div>
-            <div class="hours-text">Sat to Thur: 08:30 AM - 10:00 PM<br>Friday: 04:00 PM - 10:00 PM</div>
-            <div style="color:var(--btn-green); font-size:12px; margin-top:10px; font-weight:700;">🚨 Emergency Available 24/7</div>
-        </div>
+        <section class="hours-card">
+            <div class="hours-label"><i class="fa-solid fa-clock"></i> Working Hours</div>
+            <div class="hours-text">8:00 AM – 10:00 PM (Daily)</div>
+        </section>
 
-        <!-- 1. CCTV SOLUTIONS -->
-        <div class="service-card">
+        <section class="service-card">
             <div class="icon-box"><i class="fa-solid fa-video"></i></div>
-            <h2>CCTV Solutions</h2>
-            <p>High-definition security cameras, IP systems, mobile viewing setup, and secure home recording configuration.</p>
-            <a href="https://wa.me/96872396139?text=I%20want%20to%20book%20CCTV%20Solutions" class="book-btn"><i class="fa-brands fa-whatsapp"></i> Book Now</a>
-            <div class="card-share">
-                <div class="share-txt">SHARE SERVICE:</div>
-                <div class="share-icons">
-                    <a href="javascript:void(0)" onclick="shareService('fb', 'CCTV Solutions')"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="javascript:void(0)" onclick="shareService('wa', 'CCTV Solutions')"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="javascript:void(0)" onclick="shareService('copy', 'CCTV Solutions')"><i class="fa-solid fa-link"></i></a>
-                </div>
-            </div>
-        </div>
-
-        <!-- 2. INTERCOM SOLUTIONS -->
-        <div class="service-card">
-            <div class="icon-box"><i class="fa-solid fa-microphone-lines"></i></div>
-            <h2>Intercom Solutions</h2>
-            <p>Professional Villa & Apartment Video/Audio intercom loop setups to manage physical access gates securely.</p>
-            <a href="https://wa.me/96872396139?text=I%20want%20to%20book%20Intercom%20Solutions" class="book-btn"><i class="fa-brands fa-whatsapp"></i> Book Now</a>
-            <div class="card-share">
-                <div class="share-txt">SHARE SERVICE:</div>
-                <div class="share-icons">
-                    <a href="javascript:void(0)" onclick="shareService('fb', 'Intercom Solutions')"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="javascript:void(0)" onclick="shareService('wa', 'Intercom Solutions')"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="javascript:void(0)" onclick="shareService('copy', 'Intercom Solutions')"><i class="fa-solid fa-link"></i></a>
-                </div>
-            </div>
-        </div>
-
-        <!-- 3. WI-FI ROUTER SOLUTIONS -->
-        <div class="service-card">
-            <div class="icon-box"><i class="fa-solid fa-wifi"></i></div>
-            <h2>Wi-Fi Router Solutions</h2>
-            <p>High-speed wireless range extension and bridging setups to eliminate dead-zones across your entire property.</p>
-            <a href="https://wa.me/96872396139?text=I%20want%20to%20book%20Wi-Fi%20Router%20Solutions" class="book-btn"><i class="fa-brands fa-whatsapp"></i> Book Now</a>
-            <div class="card-share">
-                <div class="share-txt">SHARE SERVICE:</div>
-                <div class="share-icons">
-                    <a href="javascript:void(0)" onclick="shareService('fb', 'Wi-Fi Router Solutions')"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="javascript:void(0)" onclick="shareService('wa', 'Wi-Fi Router Solutions')"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="javascript:void(0)" onclick="shareService('copy', 'Wi-Fi Router Solutions')"><i class="fa-solid fa-link"></i></a>
-                </div>
-            </div>
-        </div>
-
-        <!-- ADSTERRA SLOT 2 -->
-        <div class="ad-slot">ADSTERRA AD PLACEMENT</div>
-
-        <!-- 4. PLUMBING SOLUTIONS -->
-        <div class="service-card">
-            <div class="icon-box"><i class="fa-solid fa-faucet-drip"></i></div>
-            <h2>Plumbing Solutions</h2>
-            <p>Fixing showers, mixers, pipes, and all core water leakages professionally with durable structural configurations.</p>
-            <a href="https://wa.me/96872396139?text=I%20want%20to%20book%20Plumbing%20Solutions" class="book-btn"><i class="fa-brands fa-whatsapp"></i> Book Now</a>
-            <div class="card-share">
-                <div class="share-txt">SHARE SERVICE:</div>
-                <div class="share-icons">
-                    <a href="javascript:void(0)" onclick="shareService('fb', 'Plumbing Solutions')"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="javascript:void(0)" onclick="shareService('wa', 'Plumbing Solutions')"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="javascript:void(0)" onclick="shareService('copy', 'Plumbing Solutions')"><i class="fa-solid fa-link"></i></a>
-                </div>
-            </div>
-        </div>
-
-        <!-- 5. ELECTRICITY SOLUTIONS -->
-        <div class="service-card">
-            <div class="icon-box"><i class="fa-solid fa-bolt-lightning"></i></div>
-            <h2>Electricity Solutions</h2>
-            <p>Full wiring, DB dressing, lights, fans, and troubleshooting repairs done safely by licensed technical experts.</p>
-            <a href="https://wa.me/96872396139?text=I%20want%20to%20book%20Electricity%20Solutions" class="book-btn"><i class="fa-brands fa-whatsapp"></i> Book Now</a>
-            <div class="card-share">
-                <div class="share-txt">SHARE SERVICE:</div>
-                <div class="share-icons">
-                    <a href="javascript:void(0)" onclick="shareService('fb', 'Electricity Solutions')"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="javascript:void(0)" onclick="shareService('wa', 'Electricity Solutions')"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="javascript:void(0)" onclick="shareService('copy', 'Electricity Solutions')"><i class="fa-solid fa-link"></i></a>
-                </div>
-            </div>
-        </div>
-
-        <!-- 6. DVR/NVR UNBANNED SOLUTIONS -->
-        <div class="service-card">
-            <div class="icon-box"><i class="fa-solid fa-unlock-keyhole"></i></div>
-            <h2>DVR/NVR Unbanned</h2>
-            <p>Professional firmware reset, password restoration, and Hik-Connect account unbinding services safely.</p>
-            <a href="https://wa.me/96872396139?text=I%20want%20to%20book%20DVR/NVR%20Unbanned%20Solutions" class="book-btn"><i class="fa-brands fa-whatsapp"></i> Book Now</a>
-            <div class="card-share">
-                <div class="share-txt">SHARE SERVICE:</div>
-                <div class="share-icons">
-                    <a href="javascript:void(0)" onclick="shareService('fb', 'DVR/NVR Unbanned')"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="javascript:void(0)" onclick="shareService('wa', 'DVR/NVR Unbanned')"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="javascript:void(0)" onclick="shareService('copy', 'DVR/NVR Unbanned')"><i class="fa-solid fa-link"></i></a>
-                </div>
-            </div>
-        </div>
-
-        <!-- 7. ELECTRIC DOOR LOCK SOLUTIONS -->
-        <div class="service-card">
-            <div class="icon-box"><i class="fa-solid fa-lock"></i></div>
-            <h2>Electric Door Lock</h2>
-            <p>Installation of magnetic locks, access control systems, and smart manual lock replacements for maximum safety.</p>
-            <a href="https://wa.me/96872396139?text=I%20want%20to%20book%20Electric%20Door%20Lock%20Solutions" class="book-btn"><i class="fa-brands fa-whatsapp"></i> Book Now</a>
-            <div class="card-share">
-                <div class="share-txt">SHARE SERVICE:</div>
-                <div class="share-icons">
-                    <a href="javascript:void(0)" onclick="shareService('fb', 'Electric Door Lock')"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="javascript:void(0)" onclick="shareService('wa', 'Electric Door Lock')"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="javascript:void(0)" onclick="shareService('copy', 'Electric Door Lock')"><i class="fa-solid fa-link"></i></a>
-                </div>
-            </div>
-        </div>
-
-        <!-- 8. IP CAMERA UNBANNED SOLUTIONS -->
-        <div class="service-card">
-            <div class="icon-box"><i class="fa-solid fa-shield-halved"></i></div>
-            <h2>IP Camera Unbanned</h2>
-            <p>Firmware restoration and unbinding of IP cameras from previously locked cloud accounts cleanly.</p>
-            <a href="https://wa.me/96872396139?text=I%20want%20to%20book%20IP%20Camera%20Unbanned%20Solutions" class="book-btn"><i class="fa-brands fa-whatsapp"></i> Book Now</a>
-            <div class="card-share">
-                <div class="share-txt">SHARE SERVICE:</div>
-                <div class="share-icons">
-                    <a href="javascript:void(0)" onclick="shareService('fb', 'IP Camera Unbanned')"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="javascript:void(0)" onclick="shareService('wa', 'IP Camera Unbanned')"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="javascript:void(0)" onclick="shareService('copy', 'IP Camera Unbanned')"><i class="fa-solid fa-link"></i></a>
-                </div>
-            </div>
-        </div>
-
-        <!-- LOCATION -->
-        <section class="map-section">
-            <i class="fa-solid fa-location-dot" style="color:var(--accent-cyan); font-size:30px;"></i>
-            <a href="https://goo.gl/maps/QS7sKHY7L1HKGDTo7" target="_blank" class="map-link">View Location on Google Maps ></a>
+            <h2>CCTV Camera Systems</h2>
+            <p>Professional installation & maintenance for IP and analog security cameras.</p>
+            <a href="#" class="book-btn"><i class="fa-brands fa-whatsapp"></i> Book via WhatsApp</a>
         </section>
-
-    </main>
-
-    <footer>
-        &copy; 2026 Home Safety Solutions. All Rights Reserved.
-    </footer>
+    </div>
 
     <script>
-        // TOGGLE MENU
-        function toggleMenu() {
-            document.getElementById('sideMenu').classList.toggle('active');
-            document.getElementById('overlay').classList.toggle('active');
-        }
+        const menuOpen = document.getElementById('menuOpen');
+        const menuClose = document.getElementById('menuClose');
+        const sideMenu = document.getElementById('sideMenu');
+        const overlay = document.getElementById('overlay');
 
-        // SHARE LOGIC
-        function shareService(platform, name) {
-            const url = window.location.href;
-            const text = "Check out " + name + " at Home Safety Solutions Muscat! ";
-            if(platform === 'fb') {
-                window.open("https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url), "_blank");
-            } else if(platform === 'wa') {
-                window.open("https://api.whatsapp.com/send?text=" + encodeURIComponent(text + url), "_blank");
-            } else if(platform === 'copy') {
-                navigator.clipboard.writeText(url).then(() => { alert("Link copied for " + name); });
-            }
-        }
+        menuOpen.addEventListener('click', () => {
+            sideMenu.classList.add('active');
+            overlay.classList.add('active');
+        });
+
+        menuClose.addEventListener('click', () => {
+            sideMenu.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+
+        overlay.addEventListener('click', () => {
+            sideMenu.classList.remove('active');
+            overlay.classList.remove('active');
+        });
     </script>
+
 </body>
-    </html>
+</html>
