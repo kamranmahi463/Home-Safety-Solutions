@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="cryptomus" content="6662a76a" />
-    <title>Home Safety Solutions - Muscat</title>
+    <title>Home Safety Solutions - Muscat, Oman</title>
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -18,74 +18,165 @@
             --text-muted: #94a3b8;
         }
 
-        body { 
-            font-family: 'Segoe UI', sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            background-color: var(--bg-dark); 
-            color: var(--text-white);
-            overflow-x: hidden;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
-        .container { max-width: 500px; margin: 0 auto; padding: 15px; }
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+        }
+
+        .container { 
+            width: 100%;
+            max-width: 500px; 
+            margin: 0 auto; 
+            padding: 15px; 
+        }
 
         /* HEADER */
         header {
             background: var(--bg-dark);
-            padding: 15px;
+            padding: 12px 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
             position: sticky;
             top: 0;
             z-index: 1000;
+            width: 100%;
         }
         .brand-layout { display: flex; align-items: center; gap: 10px; }
-        .brand-icon { background: var(--accent-cyan); color: #000; padding: 7px; border-radius: 6px; }
-        .brand-name { font-weight: 700; font-size: 16px; letter-spacing: 0.5px; }
-        .menu-toggle { color: var(--text-white); font-size: 24px; cursor: pointer; }
+        .brand-icon { background: var(--accent-cyan); color: #000; padding: 7px 9px; border-radius: 8px; font-size: 16px; }
+        .brand-name { font-weight: 700; font-size: 16px; letter-spacing: 0.3px; }
+        
+        .header-actions { display: flex; align-items: center; gap: 12px; }
+        .pwa-install-btn {
+            background: rgba(0, 215, 243, 0.15);
+            color: var(--accent-cyan);
+            border: 1px solid var(--accent-cyan);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .menu-toggle { color: var(--text-white); font-size: 22px; cursor: pointer; }
 
         /* RIGHT SIDE MENU */
         .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); display: none; z-index: 1500; }
         .side-menu { position: fixed; top: 0; right: -300px; width: 280px; height: 100%; background: var(--card-bg); z-index: 2000; transition: 0.3s; padding: 30px 20px; box-shadow: -10px 0 30px rgba(0,0,0,0.5); }
         .side-menu.active { right: 0; }
         .overlay.active { display: block; }
-        .menu-close { text-align: right; font-size: 28px; margin-bottom: 30px; cursor: pointer; }
+        .menu-close { text-align: right; font-size: 26px; margin-bottom: 25px; cursor: pointer; color: var(--text-muted); }
         .menu-list { list-style: none; padding: 0; }
-        .menu-list li { margin: 25px 0; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px; }
-        .menu-list a { color: var(--text-white); text-decoration: none; display: flex; align-items: center; gap: 15px; font-size: 16px; }
-        .menu-list i { color: var(--accent-cyan); width: 25px; }
+        .menu-list li { margin: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 12px; }
+        .menu-list a { color: var(--text-white); text-decoration: none; display: flex; align-items: center; gap: 12px; font-size: 15px; }
+        .menu-list i { color: var(--accent-cyan); width: 22px; }
 
         /* PROFILE SECTION */
-        .profile-area { text-align: center; padding: 25px 0; }
-        .profile-area h1 { font-size: 28px; margin: 0; font-weight: 800; }
-        .profile-area p { color: var(--accent-cyan); font-size: 13px; margin-top: 8px; }
-        .home-service { color: var(--btn-green); font-weight: 600; font-size: 14px; margin-top: 15px; }
+        .profile-area { text-align: center; padding: 20px 0 10px 0; }
+        .profile-area h1 { font-size: 26px; margin: 0; font-weight: 800; letter-spacing: -0.5px; }
+        .profile-area p { color: var(--accent-cyan); font-size: 13px; margin-top: 6px; font-weight: 500; }
+        .home-service { color: var(--btn-green); font-weight: 600; font-size: 13px; margin-top: 10px; display: inline-flex; align-items: center; gap: 6px; }
 
         /* WORKING HOURS */
-        .hours-card { border: 1px solid var(--warn-yellow); border-radius: 15px; padding: 18px; margin: 20px 0; background: rgba(0,0,0,0.3); }
-        .hours-label { color: var(--warn-yellow); font-weight: 700; display: flex; align-items: center; gap: 8px; font-size: 15px; }
-        .hours-text { font-size: 14px; margin-top: 8px; color: #eee; }
+        .hours-card { border: 1px solid var(--warn-yellow); border-radius: 14px; padding: 15px; margin: 18px 0; background: rgba(255, 176, 0, 0.05); }
+        .hours-label { color: var(--warn-yellow); font-weight: 700; display: flex; align-items: center; gap: 8px; font-size: 14px; }
+        .hours-text { font-size: 13px; margin-top: 6px; color: #eee; }
 
         /* SERVICE CARDS */
         .service-card { 
             background: var(--card-bg); 
-            border-radius: 20px; 
-            padding: 25px; 
-            margin-bottom: 35px; 
+            border-radius: 18px; 
+            padding: 22px; 
+            margin-bottom: 20px; 
             position: relative; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
         }
-        .icon-box { font-size: 38px; color: var(--accent-cyan); margin-bottom: 15px; }
-        .service-card h2 { font-size: 22px; margin: 0 0 10px 0; font-weight: 700; }
-        .service-card p { font-size: 14px; color: var(--text-muted); line-height: 1.5; margin-bottom: 20px; }
+        .icon-box { font-size: 34px; color: var(--accent-cyan); margin-bottom: 12px; }
+        .service-card h2 { font-size: 19px; margin: 0 0 8px 0; font-weight: 700; }
+        .service-card p { font-size: 13px; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px; }
+
+        .service-time {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: var(--warn-yellow);
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
 
         .book-btn { 
             background: var(--btn-green); color: #000; text-decoration: none; 
-            display: flex; align-items: center; justify-content: center; gap: 10px; 
-            padding: 14px; border-radius: 12px; font-weight: 800; font-size: 15px;
+            display: flex; align-items: center; justify-content: center; gap: 8px; 
+            padding: 12px; border-radius: 10px; font-weight: 700; font-size: 14px;
+            transition: transform 0.1s ease, background 0.2s ease;
         }
+        .book-btn:active { transform: scale(0.98); }
+
+        /* ABOUT / EXPERIENCE BOX */
+        .experience-card {
+            background: linear-gradient(145deg, #101726, #0b101c);
+            border: 1px solid rgba(0, 215, 243, 0.3);
+            border-radius: 18px;
+            padding: 22px;
+            margin: 25px 0;
+        }
+        .experience-card h3 { color: var(--accent-cyan); font-size: 18px; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+        .experience-card p { font-size: 13px; color: #d1d5db; line-height: 1.6; margin-bottom: 12px; }
+        .location-info { font-size: 13px; color: #ffffff; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+
+        /* FOOTER & MODALS */
+        footer {
+            text-align: center;
+            padding: 25px 15px;
+            font-size: 12px;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            margin-top: 20px;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+        .footer-links a { color: var(--accent-cyan); text-decoration: none; font-size: 12px; }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85);
+            z-index: 3000;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .modal-content {
+            background: var(--card-bg);
+            max-width: 450px;
+            margin: 40px auto;
+            padding: 20px;
+            border-radius: 14px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .modal-header h3 { font-size: 18px; color: var(--accent-cyan); }
+        .close-modal { font-size: 22px; cursor: pointer; color: var(--text-muted); }
+        .modal-body { font-size: 13px; color: #cbd5e1; line-height: 1.6; }
     </style>
 </head>
 <body>
@@ -95,7 +186,10 @@
             <div class="brand-icon"><i class="fa-solid fa-shield-halved"></i></div>
             <div class="brand-name">Home Safety Solutions</div>
         </div>
-        <div class="menu-toggle" id="menuOpen"><i class="fa-solid fa-bars"></i></div>
+        <div class="header-actions">
+            <button class="pwa-install-btn" id="installBtn"><i class="fa-solid fa-download"></i> Install App</button>
+            <div class="menu-toggle" id="menuOpen"><i class="fa-solid fa-bars"></i></div>
+        </div>
     </header>
 
     <div class="overlay" id="overlay"></div>
@@ -103,9 +197,11 @@
         <div class="menu-close" id="menuClose"><i class="fa-solid fa-xmark"></i></div>
         <ul class="menu-list">
             <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
-            <li><a href="#"><i class="fa-solid fa-gears"></i> Services</a></li>
-            <li><a href="#"><i class="fa-solid fa-clock"></i> Working Hours</a></li>
-            <li><a href="#"><i class="fa-solid fa-phone"></i> Contact Us</a></li>
+            <li><a href="#services"><i class="fa-solid fa-gears"></i> All Services</a></li>
+            <li><a href="#about"><i class="fa-solid fa-award"></i> About & Experience</a></li>
+            <li><a href="https://wa.me/96872396139?text=Hello%20Home%20Safety%20Solutions,%20I%20have%20an%20inquiry." target="_blank"><i class="fa-brands fa-whatsapp"></i> Contact Us</a></li>
+            <li><a href="javascript:void(0)" onclick="openModal('privacyModal')"><i class="fa-solid fa-user-shield"></i> Privacy Policy</a></li>
+            <li><a href="javascript:void(0)" onclick="openModal('termsModal')"><i class="fa-solid fa-file-contract"></i> Terms of Service</a></li>
         </ul>
     </div>
 
@@ -113,23 +209,125 @@
         <section class="profile-area">
             <h1>Home Safety Solutions</h1>
             <p><i class="fa-solid fa-location-dot"></i> Muscat, Sultanate of Oman</p>
-            <div class="home-service"><i class="fa-solid fa-truck-fast"></i> Home Services Available</div>
+            <div class="home-service"><i class="fa-solid fa-truck-fast"></i> On-Site Home Services Available</div>
         </section>
 
         <section class="hours-card">
-            <div class="hours-label"><i class="fa-solid fa-clock"></i> Working Hours</div>
-            <div class="hours-text">8:00 AM – 10:00 PM (Daily)</div>
+            <div class="hours-label"><i class="fa-solid fa-clock"></i> Regular Working Hours</div>
+            <div class="hours-text">8:00 AM – 10:00 PM (Daily Service)</div>
         </section>
 
+        <div id="services"></div>
+
+        <!-- 1. CCTV Camera Systems -->
         <section class="service-card">
             <div class="icon-box"><i class="fa-solid fa-video"></i></div>
-            <h2>CCTV Camera Systems</h2>
-            <p>Professional installation & maintenance for IP and analog security cameras.</p>
-            <a href="#" class="book-btn"><i class="fa-brands fa-whatsapp"></i> Book via WhatsApp</a>
+            <h2>CCTV Camera Solutions</h2>
+            <p>Full installation, configuration, and maintenance for Hikvision, Dahua, Ezviz, and solar PTZ IP/Analog surveillance setups.</p>
+            <div class="service-time"><i class="fa-solid fa-clock"></i> Available: 8:00 AM – 10:00 PM</div>
+            <a href="https://wa.me/96872396139?text=Hello,%20I%20need%20CCTV%20Camera%20Services." target="_blank" class="book-btn"><i class="fa-brands fa-whatsapp"></i> Book via WhatsApp</a>
         </section>
+
+        <!-- 2. Electrician Service -->
+        <section class="service-card">
+            <div class="icon-box"><i class="fa-solid fa-bolt"></i></div>
+            <h2>Electrician Services</h2>
+            <p>Professional home wiring repairs, LED spotlights, DB box maintenance, switches, sockets, and complete electrical installations.</p>
+            <div class="service-time"><i class="fa-solid fa-clock"></i> Available: 8:00 AM – 10:00 PM</div>
+            <a href="https://wa.me/96872396139?text=Hello,%20I%20need%20Electrician%20Services." target="_blank" class="book-btn"><i class="fa-brands fa-whatsapp"></i> Book via WhatsApp</a>
+        </section>
+
+        <!-- 3. Plumbing Solutions -->
+        <section class="service-card">
+            <div class="icon-box"><i class="fa-solid fa-faucet-drip"></i></div>
+            <h2>Plumbing Solutions</h2>
+            <p>Techno PPR pipe fittings, leak repairs, sanitary maintenance, water heater connections, and water pump troubleshooting.</p>
+            <div class="service-time"><i class="fa-solid fa-clock"></i> Available: 8:00 AM – 10:00 PM</div>
+            <a href="https://wa.me/96872396139?text=Hello,%20I%20need%20Plumbing%20Services." target="_blank" class="book-btn"><i class="fa-brands fa-whatsapp"></i> Book via WhatsApp</a>
+        </section>
+
+        <!-- 4. Intercom Service -->
+        <section class="service-card">
+            <div class="icon-box"><i class="fa-solid fa-headset"></i></div>
+            <h2>Intercom Systems</h2>
+            <p>Audio & video intercom setups, villa door station alignment, indoor screens, Commax, and Hikvision IP intercom configurations.</p>
+            <div class="service-time"><i class="fa-solid fa-clock"></i> Available: 8:00 AM – 10:00 PM</div>
+            <a href="https://wa.me/96872396139?text=Hello,%20I%20need%20Intercom%20System%20Services." target="_blank" class="book-btn"><i class="fa-brands fa-whatsapp"></i> Book via WhatsApp</a>
+        </section>
+
+        <!-- 5. Wi-Fi Router Solutions -->
+        <section class="service-card">
+            <div class="icon-box"><i class="fa-solid fa-wifi"></i></div>
+            <h2>Wi-Fi & Router Solutions</h2>
+            <p>Fiber ONT configuration, Huawei/FiberHome/TP-Link setups, Wi-Fi speed optimization, static routing, and coverage extension.</p>
+            <div class="service-time"><i class="fa-solid fa-clock"></i> Available: 8:00 AM – 10:00 PM</div>
+            <a href="https://wa.me/96872396139?text=Hello,%20I%20need%20Wi-Fi%20%26%20Router%20Services." target="_blank" class="book-btn"><i class="fa-brands fa-whatsapp"></i> Book via WhatsApp</a>
+        </section>
+
+        <!-- 6. Electric Door Lock Solutions -->
+        <section class="service-card">
+            <div class="icon-box"><i class="fa-solid fa-door-closed"></i></div>
+            <h2>Electric Door Lock Solutions</h2>
+            <p>Installation and power supply setup for Yalla electric rim locks, magnetic door locks, access control keypads, and push buttons.</p>
+            <div class="service-time"><i class="fa-solid fa-clock"></i> Available: 8:00 AM – 10:00 PM</div>
+            <a href="https://wa.me/96872396139?text=Hello,%20I%20need%20Electric%20Door%20Lock%20Services." target="_blank" class="book-btn"><i class="fa-brands fa-whatsapp"></i> Book via WhatsApp</a>
+        </section>
+
+        <!-- 7. DVR NVR Password Solutions -->
+        <section class="service-card">
+            <div class="icon-box"><i class="fa-solid fa-key"></i></div>
+            <h2>DVR / NVR Password Reset Solutions</h2>
+            <p>Fast password recovery and reset solutions for Hikvision, Dahua, Xiongmai, and unbranded security recorders.</p>
+            <div class="service-time"><i class="fa-solid fa-clock"></i> Available: 8:00 AM – 10:00 PM</div>
+            <a href="https://wa.me/96872396139?text=Hello,%20I%20need%20DVR/NVR%20Password%20Reset%20Help." target="_blank" class="book-btn"><i class="fa-brands fa-whatsapp"></i> Book via WhatsApp</a>
+        </section>
+
+        <!-- ABOUT & EXPERIENCE SECTION -->
+        <section class="experience-card" id="about">
+            <h3><i class="fa-solid fa-certificate"></i> Best Quality Guarantee</h3>
+            <p>I have 10 years of direct technical field experience in Oman, providing high-quality installation and regular maintenance services across residential homes, villas, and commercial properties since 2016.</p>
+            <div class="location-info"><i class="fa-solid fa-map-pin"></i> Location: Al Amarat 119, Muscat, Oman</div>
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://wa.me/96872396139" target="_blank">Contact Us</a>
+            <a href="javascript:void(0)" onclick="openModal('privacyModal')">Privacy Policy</a>
+            <a href="javascript:void(0)" onclick="openModal('termsModal')">Terms of Service</a>
+        </div>
+        <div>Copyright @2016 - Created by Home Safety Solutions</div>
+    </footer>
+
+    <!-- PRIVACY POLICY MODAL -->
+    <div class="modal" id="privacyModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Privacy Policy</h3>
+                <span class="close-modal" onclick="closeModal('privacyModal')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>Home Safety Solutions respects your privacy. We only collect basic contact information provided voluntarily via WhatsApp inquiries for service scheduling and technical support across Muscat, Oman. We never share your data with third parties.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- TERMS OF SERVICE MODAL -->
+    <div class="modal" id="termsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Terms of Service</h3>
+                <span class="close-modal" onclick="closeModal('termsModal')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>All home installations, electrical, plumbing, and CCTV security services provided by Home Safety Solutions are performed on-site by experienced technicians. Warranties for hardware components are subject to manufacturer terms.</p>
+            </div>
+        </div>
     </div>
 
     <script>
+        // Sidebar Navigation Controls
         const menuOpen = document.getElementById('menuOpen');
         const menuClose = document.getElementById('menuClose');
         const sideMenu = document.getElementById('sideMenu');
@@ -148,6 +346,46 @@
         overlay.addEventListener('click', () => {
             sideMenu.classList.remove('active');
             overlay.classList.remove('active');
+        });
+
+        // Close side menu when clicking links inside
+        document.querySelectorAll('.side-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                sideMenu.classList.remove('active');
+                overlay.classList.remove('active');
+            });
+        });
+
+        // Modal Controls
+        function openModal(id) {
+            document.getElementById(id).style.display = 'block';
+        }
+        function closeModal(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+
+        // PWA Install Prompt Logic
+        let deferredPrompt;
+        const installBtn = document.getElementById('installBtn');
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            installBtn.style.display = 'flex';
+        });
+
+        installBtn.addEventListener('click', () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        installBtn.style.display = 'none';
+                    }
+                    deferredPrompt = null;
+                });
+            } else {
+                alert('To install Home Safety Solutions, tap your browser menu (⋮) and select "Add to Home screen".');
+            }
         });
     </script>
 
