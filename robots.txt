@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://safelysolutions.work/sitemap.xml
